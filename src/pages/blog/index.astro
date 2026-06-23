@@ -1,9 +1,10 @@
 ---
-import { Image } from "astro:assets";
-import NavigationBar from "../../components/NavigationBar.astro";
+import { Image } from 'astro:assets';
+import NavigationBar from '../../components/NavigationBar.astro';
+import BaseHead from '../../components/BaseHead.astro';
 import { getCollection } from "astro:content";
 
-const posts = await getCollection('blog');
+const posts = (await getCollection('blog')).sort((a , b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ const posts = await getCollection('blog');
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog Index - Developing with DominickCS_</title>
+<BaseHead title='Blog Index - Developing with DominickCS_' description='The index of my blog!' />
   </head>
   <body>
     <NavigationBar />
@@ -27,7 +28,7 @@ const posts = await getCollection('blog');
 									)}
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
-										<!-- <FormattedDate date={post.data.pubDate} /> -->
+										date={post.data.publishDate}
 									</p>
 								</a>
 							</li>
