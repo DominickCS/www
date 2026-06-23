@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,5 +9,17 @@ export default defineConfig({
       theme: 'catppuccin-frappe',
       wrap: true,
     }
-  }
+  },
+  fonts: [{
+    provider: fontProviders.local(),
+    name: "Inconsolata",
+    cssVariable: "--font-inconsolata",
+    options: {
+      variants: [{
+        src: ['./src/assets/fonts/Inconsolata.ttf'],
+        weight: '200 900',
+        style: 'normal',
+      }]
+    }
+  }]
 });
