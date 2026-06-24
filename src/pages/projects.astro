@@ -1,0 +1,23 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import NavigationBar from '../components/NavigationBar.astro';
+import BaseHead from '../components/BaseHead.astro';
+---
+<style>
+</style>
+
+<html lang="en">
+	<head>
+    <Font cssVariable='--font-inconsolata' />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <BaseHead title='Projects - Developing with DominickCS_' description='Check out my projects!' />
+	</head>
+	<body>
+    <NavigationBar />
+	</body>
+</html>

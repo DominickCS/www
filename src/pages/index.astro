@@ -2,7 +2,25 @@
 import '../styles/global.css';
 import NavigationBar from '../components/NavigationBar.astro';
 import BaseHead from '../components/BaseHead.astro';
+import { Font } from 'astro:assets';
+import { Image } from 'astro:assets';
+import pfp from '../images/pfp.jpg';
 ---
+<style>
+.intro-container{
+  width: 100w;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+img {
+  max-width: 300px;
+  display: block;
+  border-radius: 6px;
+  margin: 0 auto;
+  height: auto;
+}
+</style>
 
 <html lang="en">
 	<head>
@@ -15,5 +33,26 @@ import BaseHead from '../components/BaseHead.astro';
 	</head>
 	<body>
     <NavigationBar />
+    <main>
+      <div class="intro-container">
+        <div>
+          <Image src={pfp} alt='A picture of me!' />
+        </div>
+        <div>
+          <div>
+            <h2>What am I playing?</h2>
+            <p>Minecraft (Sevtech Ages)</p>
+          </div>
+          <div>
+            <h2>What album am I listening to?</h2>
+            <p>Kaytranada - 99.9%</p>
+          </div>
+          <div>
+            <h2>What am I learning?</h2>
+            <p>The C Programming Language</p>
+          </div>
+        </div>
+      </div>
+    </main>
 	</body>
 </html>
