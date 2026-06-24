@@ -25,13 +25,12 @@ a {
 
 p > a {
   text-decoration: underline;
-  target: _blank;
 }
 
 .hero-image img {
 	display: block;
-  width: 70vw;
-  max-height: 200px;
+  width: 75vw;
+  max-height: 260px;
   border-radius: 8px;
   object-fit: cover;
   margin: 0 auto;
