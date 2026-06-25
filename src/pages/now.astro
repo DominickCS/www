@@ -3,8 +3,12 @@ import { Font } from 'astro:assets';
 import '../styles/global.css';
 import NavigationBar from '../components/NavigationBar.astro';
 import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 ---
 <style>
+section {
+  min-height: 100svh;
+}
 </style>
 
 <html lang="en">
@@ -19,5 +23,11 @@ import BaseHead from '../components/BaseHead.astro';
 	</head>
 	<body>
     <NavigationBar />
+    <main>
+      <section>
+
+      </section>
+    </main>
 	</body>
+  <Footer />
 </html>
