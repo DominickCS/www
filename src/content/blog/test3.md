@@ -1,10 +1,9 @@
 ---
 title: "Java is a great programming language, here's why..."
-description: "This is a test post to see how blog posts are parsed and rendered within an astro project"
 publishDate: "Jun 26 2026"
 updatedDate: "Jun 30 2026"
 heroImage: "../../images/code.png"
-heroImageAlt: "An image of code"
+heroImageAlt: "A simple code snippet inside of a terminal"
 ---
 
 ## Hello
