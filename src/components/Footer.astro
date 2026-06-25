@@ -1,0 +1,53 @@
+---
+import { Font } from 'astro:assets';
+import { Image } from 'astro:assets';
+import youtube_icon from '../images/youtube-icon.svg';
+import github_icon from '../images/github-icon.svg';
+import linkedin_icon from '../images/linkedin-icon.svg';
+
+const year = new Date().getFullYear();
+---
+<style>
+footer {
+  max-width: 30vw;
+  margin: 0 auto;
+  align-items: center;
+}
+.footer-container {
+  font-family: var(--font-inconsolata);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+div {
+  align-items: center;
+}
+div > a {
+  align-items: center;
+  margin: 0 6px;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <Font cssVariable="--font-inconsolata" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <footer>
+      <nav class="footer-container">
+        <h5>
+          <a href="/">&copy; {year} Developing with DominickCS_</a>
+        </h5>
+        <div>
+          <a href="https://www.github.com/DominickCS" target="_blank"><Image src={github_icon} height={20} alt={"The GitHub logo"} loading={'eager'}/></a>
+          <a href="https://www.youtube.com/@tty_dom" target="_blank"><Image src={youtube_icon} height={20} alt={"The YouTube logo"} loading={'eager'}/></a>
+          <a href="https://www.linkedin.com/in/dominickcs" target="_blank"><Image src={linkedin_icon} height={20} alt={"The LinkedIn logo"} loading={'eager'} /></a>
+        </div>
+      </nav>
+    </footer>
+  </body>
+</html>
