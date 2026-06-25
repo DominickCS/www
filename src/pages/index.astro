@@ -14,116 +14,95 @@ import code_icon from '../images/code-icon.svg';
 <style>
 
 .pfp-widget-container {
-  margin: 0 auto;
-  gap: 21px;
-  align-items: center;
+  gap: 8px;
+  display: grid;
+  line-height: 0.3rem;
+  margin: 21px auto;
+}
+
+.widget-container {
+  display: grid;
+  gap: 8px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1024px){
   .widget-container {
-  display: grid;
   grid-template-columns: auto;
-  gap: 9px;
   }
 
   .pfp-widget-container{
-  display: grid;
   grid-template-columns: auto;
-  gap: 9px;
   }
 
-  h2, p {
-  padding: 0 12px;
-  line-height: 1.2rem;
+  h3, p {
   text-align: left;
-  font-size: 12px;
   }
 }
 
 @media screen and (min-width: 1024px){
   .widget-container {
-  display: grid;
   grid-template-columns: auto auto;
-  gap: 21px;
   }
   
   .pfp-widget-container{
-  display: grid;
   grid-template-columns: auto auto;
-  gap: 21px;
   }
 
-  h2, p {
-  padding: 0 12px;
-  line-height: 1.2rem;
+  h3, p {
   text-align: left;
-  font-size: 18px;
   }
 }
 
 .intro-paragraph-container {
-  border: dotted #737994 3px;
-  border-radius: 9px;
   padding: 3px;
-  margin: 18px auto;
-}
-
-.intro-paragraph-container > p, li {
-  line-height: 1.4rem;
+  margin: 0 auto;
 }
 
 main {
   font-family: var(--font-inconsolata);
-  max-width: 80vw;
+  max-width: 90vw;
   margin: 0 auto;
+  min-height: 100svh;
 }
 
 .now-gaming-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border: dotted #737994 3px;
   border-radius: 9px;
   padding: 9px;
-  margin: 12px 0;
 }
 
 .now-music-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border: dotted #737994 3px;
   border-radius: 9px;
   padding: 9px;
-  margin: 12px 0;
 }
 
 .now-study-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border: dotted #737994 3px;
   border-radius: 9px;
   padding: 9px;
-  margin: 12px 0;
 }
 
 .now-building-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   border: dotted #737994 3px;
   border-radius: 9px;
   padding: 9px;
-  margin: 12px 0;
-}
-
-main {
-  min-height: 100svh;
 }
 
 .pfp {
   border-radius: 9px;
   border: dotted #737994 3px;
   box-shadow: 0px 6px 12px #73799431;
-  margin: 18px auto;
   display: block;
+  margin: 0 auto;
 }
 
 .controller {
@@ -131,7 +110,7 @@ main {
   border: dotted #737994 3px;
   box-shadow: 0px 6px 12px #73799430;
   padding: 6px;
-  margin-right: 3px;
+  margin-right: 9px;
 }
 
 .music_note {
@@ -139,7 +118,7 @@ main {
   border: dotted #737994 3px;
   box-shadow: 0px 6px 12px #73799430;
   padding: 6px;
-  margin-right: 3px;
+  margin-right: 9px;
 }
 
 .textbook_icon {
@@ -147,7 +126,7 @@ main {
   border: dotted #737994 3px;
   box-shadow: 0px 6px 12px #73799430;
   padding: 6px;
-  margin-right: 3px;
+  margin-right: 9px;
 }
 
 .code_icon {
@@ -155,7 +134,7 @@ main {
   border: dotted #737994 3px;
   box-shadow: 0px 6px 12px #73799430;
   padding: 6px;
-  margin-right: 3px;
+  margin-right: 9px;
 }
 
 </style>
@@ -176,35 +155,35 @@ main {
       <section>
       <div class="pfp-widget-container">
         <div>
-          <Image src={pfp} class={'pfp'} alt="Dominick smiling, wearing a dark hoodie." height={300} quality="high" loading={'eager'} />
+          <Image src={pfp} class={'pfp'} alt="Dominick smiling, wearing a dark hoodie." height={500} quality="high" loading={'eager'} />
         </div>
         <div class="widget-container">
           <div class="now-gaming-container">
             <Image class={'controller'} src={controller} height={30} alt={'A controller icon'} loading={'eager'}/>
             <div>
-            <h2>currently playing</h2>
+            <h3>currently playing</h3>
             <p>Modded Minecraft - SevTech Ages</p>
             </div>
           </div>
           <div class="now-music-container">
             <Image class={'music_note'} src={music_note} height={30} alt={'A music note icon'} loading={'eager'}/>
             <div>
-            <h2>on repeat</h2>
+            <h3>on repeat</h3>
             <p>Kaytranada - 99.9%</p>
             </div>
           </div>
           <div class="now-study-container">
             <Image class={'textbook_icon'} src={textbook_icon} height={30} alt={'A textbook icon'} loading={'eager'} />
             <div>
-            <h2>studying</h2>
+            <h3>studying</h3>
             <p>K&R's "The C Programming Language"</p>
             </div>
           </div>
           <div class="now-building-container">
             <Image class={'code_icon'} src={code_icon} height={30} alt={'A code icon'} loading={'eager'} />
             <div>
-            <h2>building</h2>
-            <p>A full-stack e-commerce platform</p>
+            <h3>building</h3>
+            <p>a client art store in Spring Boot + React.</p>
             </div>
           </div>
         </div>
