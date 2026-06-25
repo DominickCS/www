@@ -1,6 +1,6 @@
 .astro-code {
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 9px;
   line-height: 1.5rem;
 }
 
@@ -10,13 +10,13 @@ html {
   scrollbar-gutter: stable;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, .date
+h1, h2, h3, h4, h5, h6, p, a, .date, li
 {
   color: #c6d0f5;
 }
 
 a:hover {
-  color: #838ba7;
+  color: #ca9ee6;
 }
 
 a {
@@ -27,11 +27,15 @@ p > a {
   text-decoration: underline;
 }
 
+li {
+  list-style-type: square;
+}
+
 .hero-image img {
 	display: block;
   width: 75vw;
   max-height: 260px;
-  border-radius: 8px;
+  border-radius: 9px;
   object-fit: cover;
   margin: 0 auto;
 }
