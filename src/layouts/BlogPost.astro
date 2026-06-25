@@ -5,6 +5,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import NavigationBar from '../components/NavigationBar.astro';
 import DateFormatter from '../components/DateFormatter.astro';
+import Footer from '../components/Footer.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -13,7 +14,7 @@ const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } 
 
 <style>
 .prose {
-	max-width: 75vw;
+	max-width: 80vw;
 	margin: auto;
 	padding: 2em 0;
   font-family: var(--font-inconsolata);
@@ -30,7 +31,7 @@ const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } 
 		<main>
 			<article>
 				<div class="hero-image">
-          {heroImage && <Image src={heroImage} alt={heroImageAlt} />}
+          {heroImage && <Image src={heroImage} alt={heroImageAlt} loading={'eager'}/>}
 				</div>
 				<div class="prose">
 					<div class="title">
@@ -52,4 +53,5 @@ const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } 
 			</article>
 		</main>
 	</body>
+<Footer />
 </html>
