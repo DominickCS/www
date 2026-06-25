@@ -10,21 +10,35 @@ const posts = (await getCollection('blog')).sort((a , b) => b.data.publishDate.v
 ---
 <style>
 main {
-  margin: 0 auto;
-  justify-items: center;
+  padding-top: 9px;
   font-family: var(--font-inconsolata);
 }
 
-.title,
-.date 
-{
-  margin: 3px 0px;
-  padding: 3px 12px;
+.post-container:hover {
+  scale: .97;
+  background-color: #949cbb20;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.post-container {
+  transition: all;
+  transition-duration: 300ms;
+  max-width: 400px;
+  max-height: 240px;
+  margin: 18px auto;
+  padding: 9px;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+}
+
+.date, .title {
+  margin: 9px 0;
 }
 
 .title {
-  font-size: 24px;
-  line-height: 2rem;
+  font-size: 18px;
+  line-height: 1.6rem;
 }
 
 .date {
@@ -33,33 +47,23 @@ main {
 }
 
 section {
+  margin: 0 auto;
+  max-width: 85vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-}
-
-div {
-  margin: 12px 12px;
-  border: solid #737994 3px;
-  border-radius: 6px;
-  max-width: 400px;
 }
 
 img {
 	width: 100%;
-  max-height: 200px;
+  max-height: 120px;
   object-fit: cover;
-  border-bottom: solid #737994 3px;
+  border-radius: 9px;
 }
 
 hr {
-  width: 20%;
+  width: 60%;
 }
 
-.description {
-  width: 90%;
-  justify-self: center;
-}
 </style>
 
 <!DOCTYPE html>
@@ -67,7 +71,7 @@ hr {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <BaseHead title='Blog Index - Developing with DominickCS_' description='The index of my blog!' />
+    <BaseHead title='blog - developing with DominickCS_' description='The home page of my blog' />
     <Font cssVariable="--font-inconsolata" />
   </head>
   <body>
@@ -76,21 +80,16 @@ hr {
 			<section>
 					{
 						posts.map((post) => (
-              <div>
+              <div class="post-container">
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
-                  <Image src={post.data.heroImage} alt={post.data.heroImageAlt} />
+                  <Image src={post.data.heroImage} alt={post.data.heroImageAlt} loading={'eager'} />
 									)}
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 
                     <DateFormatter date={post.data.publishDate} />
 									</p>
-                        <hr />
-
-            <p class="description">
-              {post.data.description}
-            </p>
 								</a>
 							</div>
 						))
