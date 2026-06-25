@@ -2,24 +2,125 @@
 import '../styles/global.css';
 import NavigationBar from '../components/NavigationBar.astro';
 import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 import { Font } from 'astro:assets';
 import { Image } from 'astro:assets';
 import pfp from '../images/pfp.jpg';
+import controller from '../images/controller-icon.svg';
+import music_note from '../images/music-icon.svg';
+import textbook_icon from '../images/textbook-icon.svg';
+import code_icon from '../images/code-icon.svg';
 ---
 <style>
-.intro-container{
-  width: 100w;
+.intro-widget-container{
+  padding: 12px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-img {
-  max-width: 300px;
-  display: block;
-  border-radius: 6px;
-  margin: 0 auto;
-  height: auto;
+.intro-paragraph-container {
+  padding: 12px;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+  padding: 9px;
+  margin: 36px 0;
 }
+
+.intro-paragraph-container > p, li {
+  line-height: 1.4rem;
+}
+
+main {
+  font-family: var(--font-inconsolata);
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.now-gaming-container {
+  display: flex;
+  align-items: center;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+  padding: 9px;
+  margin: 12px 0;
+}
+
+.now-music-container {
+  display: flex;
+  align-items: center;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+  padding: 9px;
+  margin: 12px 0;
+}
+
+.now-study-container {
+  display: flex;
+  align-items: center;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+  padding: 9px;
+  margin: 12px 0;
+}
+
+.now-building-container {
+  display: flex;
+  align-items: center;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+  padding: 9px;
+  margin: 12px 0;
+}
+
+h2, p {
+  padding: 0 12px;
+  line-height: 0.4rem;
+  text-align: left;
+}
+
+.pfp {
+  border-radius: 9px;
+  border: dotted #737994 3px;
+  box-shadow: 0px 6px 12px #73799411;
+  padding: 6px;
+  margin: 12px 0;
+}
+
+.controller {
+  border-radius: 9px;
+  border: dotted #737994 3px;
+  box-shadow: 0px 6px 12px #73799430;
+  padding: 6px;
+  margin-right: 3px;
+}
+
+.music_note {
+  border-radius: 9px;
+  border: dotted #737994 3px;
+  box-shadow: 0px 6px 12px #73799430;
+  padding: 6px;
+  margin-right: 3px;
+}
+
+.textbook_icon {
+  border-radius: 9px;
+  border: dotted #737994 3px;
+  box-shadow: 0px 6px 12px #73799430;
+  padding: 6px;
+  margin-right: 3px;
+}
+
+.code_icon {
+  border-radius: 9px;
+  border: dotted #737994 3px;
+  box-shadow: 0px 6px 12px #73799430;
+  padding: 6px;
+  margin-right: 3px;
+}
+
 </style>
 
 <html lang="en">
@@ -29,30 +130,56 @@ img {
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-    <BaseHead title='Developing with DominickCS_' description='Welcome to my site!' />
+    <Font cssVariable="--font-inconsolata" />
+    <BaseHead title='Developing with DominickCS_' description='The index page of Developing with DominickCS_' />
 	</head>
 	<body>
     <NavigationBar />
     <main>
-      <div class="intro-container">
+      <div class="intro-widget-container">
         <div>
-          <Image src={pfp} alt='A picture of me!' />
+          <Image src={pfp} class={'pfp'} alt="Dominick smiling, wearing a dark hoodie." width={310} quality="high" loading={'eager'} />
         </div>
         <div>
-          <div>
-            <h2>What am I playing?</h2>
-            <p>Minecraft (Sevtech Ages)</p>
+          <div class="now-gaming-container">
+            <Image class={'controller'} src={controller} height={30} alt={'A controller icon'} loading={'eager'}/>
+            <div>
+            <h2>currently playing</h2>
+            <p>Modded Minecraft - SevTech Ages</p>
+            </div>
           </div>
-          <div>
-            <h2>What album am I listening to?</h2>
+          <div class="now-music-container">
+            <Image class={'music_note'} src={music_note} height={30} alt={'A music note icon'} loading={'eager'}/>
+            <div>
+            <h2>on repeat</h2>
             <p>Kaytranada - 99.9%</p>
+            </div>
           </div>
-          <div>
-            <h2>What am I learning?</h2>
-            <p>The C Programming Language</p>
+          <div class="now-study-container">
+            <Image class={'textbook_icon'} src={textbook_icon} height={30} alt={'A textbook icon'} loading={'eager'} />
+            <div>
+            <h2>studying</h2>
+            <p>K&R's "The C Programming Language"</p>
+            </div>
+          </div>
+          <div class="now-building-container">
+            <Image class={'code_icon'} src={code_icon} height={30} alt={'A code icon'} loading={'eager'} />
+            <div>
+            <h2>building</h2>
+            <p>A full-stack e-commerce platform</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="intro-paragraph-container">
+          <p>
+          Hey, welcome to my website. My name is Dominick, a.k.a DominickCS. Born and raised in Texas, but don't let the lack of a cowboy hat fool you. I am just built different lol. Here on my website you can expect to find things that I am passionate about.
+          </p>
+          <p>I am on here updating this site regularly so if you'd like to follow along, please feel free. Who knows maybe we can be friends!</p>
+        </div>
     </main>
 	</body>
+  <footer>
+    <Footer />
+  </footer>
 </html>
