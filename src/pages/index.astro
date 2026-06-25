@@ -16,46 +16,45 @@ import code_icon from '../images/code-icon.svg';
 .pfp-widget-container {
   gap: 8px;
   display: grid;
-  line-height: 0.3rem;
   margin: 21px auto;
 }
 
 .widget-container {
   display: grid;
   gap: 8px;
+  align-items: stretch;
+  text-align: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1024px){
+@media screen and (min-width: 320px) and (max-width: 1440px){
   .widget-container {
-  grid-template-columns: auto;
+  grid-template-columns: 1fr;
   }
 
-  .pfp-widget-container{
+  .pfp-widget-container {
   grid-template-columns: auto;
+  line-height: 1rem;
   }
 
-  h3, p {
-  text-align: left;
-  }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1440px){
   .widget-container {
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   }
   
   .pfp-widget-container{
-  grid-template-columns: auto auto;
+  grid-template-columns: 0.33fr 0.66fr;
+  line-height: 0.3rem;
   }
 
-  h3, p {
-  text-align: left;
-  }
 }
 
 .intro-paragraph-container {
   padding: 3px;
+  font-size: 20px;
   margin: 0 auto;
+  text-align: left;
 }
 
 main {
@@ -67,34 +66,38 @@ main {
 
 .now-gaming-container {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: dotted #737994 3px;
   border-radius: 9px;
-  padding: 9px;
 }
 
 .now-music-container {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: dotted #737994 3px;
   border-radius: 9px;
-  padding: 9px;
 }
 
 .now-study-container {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: dotted #737994 3px;
   border-radius: 9px;
-  padding: 9px;
 }
 
 .now-building-container {
   display: flex;
-  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   border: dotted #737994 3px;
   border-radius: 9px;
-  padding: 9px;
 }
 
 .pfp {
@@ -103,38 +106,6 @@ main {
   box-shadow: 0px 6px 12px #73799431;
   display: block;
   margin: 0 auto;
-}
-
-.controller {
-  border-radius: 9px;
-  border: dotted #737994 3px;
-  box-shadow: 0px 6px 12px #73799430;
-  padding: 6px;
-  margin-right: 9px;
-}
-
-.music_note {
-  border-radius: 9px;
-  border: dotted #737994 3px;
-  box-shadow: 0px 6px 12px #73799430;
-  padding: 6px;
-  margin-right: 9px;
-}
-
-.textbook_icon {
-  border-radius: 9px;
-  border: dotted #737994 3px;
-  box-shadow: 0px 6px 12px #73799430;
-  padding: 6px;
-  margin-right: 9px;
-}
-
-.code_icon {
-  border-radius: 9px;
-  border: dotted #737994 3px;
-  box-shadow: 0px 6px 12px #73799430;
-  padding: 6px;
-  margin-right: 9px;
 }
 
 </style>
@@ -155,32 +126,32 @@ main {
       <section>
       <div class="pfp-widget-container">
         <div>
-          <Image src={pfp} class={'pfp'} alt="Dominick smiling, wearing a dark hoodie." height={500} quality="high" loading={'eager'} />
+          <Image src={pfp} class={'pfp'} alt="Dominick smiling, wearing a dark hoodie." height={400} quality="high" loading={'eager'} />
         </div>
         <div class="widget-container">
           <div class="now-gaming-container">
-            <Image class={'controller'} src={controller} height={30} alt={'A controller icon'} loading={'eager'}/>
+            <Image src={controller} height={30} alt={'A controller icon'} loading={'eager'}/>
             <div>
             <h3>currently playing</h3>
             <p>Modded Minecraft - SevTech Ages</p>
             </div>
           </div>
           <div class="now-music-container">
-            <Image class={'music_note'} src={music_note} height={30} alt={'A music note icon'} loading={'eager'}/>
+            <Image src={music_note} height={30} alt={'A music note icon'} loading={'eager'}/>
             <div>
             <h3>on repeat</h3>
             <p>Kaytranada - 99.9%</p>
             </div>
           </div>
           <div class="now-study-container">
-            <Image class={'textbook_icon'} src={textbook_icon} height={30} alt={'A textbook icon'} loading={'eager'} />
+            <Image src={textbook_icon} height={30} alt={'A textbook icon'} loading={'eager'} />
             <div>
             <h3>studying</h3>
             <p>K&R's "The C Programming Language"</p>
             </div>
           </div>
           <div class="now-building-container">
-            <Image class={'code_icon'} src={code_icon} height={30} alt={'A code icon'} loading={'eager'} />
+            <Image src={code_icon} height={30} alt={'A code icon'} loading={'eager'} />
             <div>
             <h3>building</h3>
             <p>a client art store in Spring Boot + React.</p>
@@ -190,7 +161,7 @@ main {
       </div>
       <div class="intro-paragraph-container">
           <p>
-            Hey, welcome to my website. My name is Dominick, a.k.a DominickCS. Born and raised in Texas, but don't let the lack of a cowboy hat fool you.. I'm still a cowboy, just wrangling code instead of cattle lol. Here on my website you can expect to find things that I am passionate about.
+            Hey, welcome to my website. My name is Dominick, a.k.a DominickCS. Born and raised in Texas, but don't let the lack of a cowboy hat fool you. I'm still a cowboy, just wrangling code instead of cattle lol. Here on my website you can expect to find things that I am passionate about.
           </p>
           <p>I am on here updating this site regularly so if you'd like to follow along, please feel free. Who knows maybe we can be friends!</p>
         </div>
