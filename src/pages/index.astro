@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import NavigationBar from '../components/NavigationBar.astro';
-import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { Font } from 'astro:assets';
 import { Image } from 'astro:assets';
@@ -118,7 +117,7 @@ main {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
     <Font cssVariable="--font-inconsolata" />
-    <BaseHead title='developing with DominickCS_' description='The index page of developing with DominickCS_' />
+    <meta name="title" content='developing with DominickCS_' />
 	</head>
 	<body>
     <NavigationBar />

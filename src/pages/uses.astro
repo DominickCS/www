@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import NavigationBar from '../components/NavigationBar.astro';
-import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import { Font } from 'astro:assets';
 ---
@@ -14,16 +13,12 @@ section {
 }
 
 span {
-  font-weight: bolder;
-  text-decoration: underline;
-}
-
-p {
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 li {
   margin: 16px 0;
+  font-weight: normal;
 }
 </style>
 
@@ -35,7 +30,7 @@ li {
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-    <BaseHead title='uses - developing with DominickCS_' description='A list of things that I love to use' />
+    <meta name="title" content="uses - developing with DominickCS_" />
 	</head>
 	<body>
     <NavigationBar />
@@ -44,27 +39,31 @@ li {
         <div>
           <h2>Hardware</h2>
           <ul>
-            <li><span>ASUS FX505DU</span> - AMD Ryzen 5 3550H / GTX 1660 Ti | Gentoo Linux | My Daily Driver</li>
-            <li><span>My Battle Station</span> - AMD Ryzen 7 3700X / GTX 1080 Ti | Arch Linux | Still Going Strong</li>
-            <li><span>HP EliteDesk G2 65W</span> - Intel 6600T | Gentoo Linux | "I use gentoo btw"</li>
+            <li><span>ASUS FX505DU</span> - AMD Ryzen 5 3550H / GTX 1660 Ti / 32GB DDR4 RAM | Gentoo Linux | daily, and yeah it's running gentoo</li>
+            <li><span>My Battle Station</span> - AMD Ryzen 7 3700X / GTX 1080 Ti / 64GB DDR4 RAM | Arch Linux | still runs minecraft like a champ</li>
+            <li><span>HP EliteDesk G2 65W</span> - Intel 6600T / 24GB DDR4 RAM | Gentoo Linux | "I use gentoo btw"</li>
+            <li><span>Raspberry Pi 3b</span> - barely use this thing, want to get something built on it soon.</li>
+            <li><span>Arduino Uno r3</span> - yeah, just yeah....</li>
             <li><span>Flipper Zero</span> - Unleashed Firmware | Wish I used this more</li>
             <li><span>Logitech G-Pro Wireless</span> - clicks three times when you click once, otherwise good</li>
             <li><span>Logitech G502 Hero</span> - (war veteran) on second set of mouse switches, sits pretty on my desk @ work</li>
             <li><span>Keychron C1</span> - nice knock, just keep away from the office, or basically anywhere quiet</li>
             <li><span>Glorius GMMK 60%</span> - heavier than my workstation, love it so much though, will never let you go</li>
             <li><span>AKG P120</span> - makes me sound smooth like butter</li>
+            <li><span>Logitech C920s</span> - webcam so i can see myself ramble about things</li>
             <li><span>Sony WHCH720N Wireless Headphones</span> - nice lightweight over-the-ear noise-cancelling budget-friendly pair</li>
             <li><span>Dell Poweredge R730xd</span> - 2x Intel / 256GB DDR3 RAM | yes, I run this at my house, don't say anything else</li>
             <li><span>Canon G7x mk III</span> - watched one review video, instantly purchased</li>
             <li><span>iPhone 13 Pro</span> - wish Google didn't hate their userbase, forced to use iPhone</li>
             <li><span>Audio Technica ATH-M50x Headphones</span> - used when I make music, ol' reliable </li>
+            <li><span>Secretlab Titan XL Chair</span> - not gonna lie, never had a chair not break on me before, been super reliable</li>
           </ul>
         </div>
         <div>
           <h2>OS & Desktop</h2>
           <ul>
-            <li><span>Gentoo Linux</span> - copy fail cve who? I built this kernel from scratch boiii</li>
-            <li><span>OpenRC Init</span> - i'm just built different</li>
+            <li><span>Gentoo Linux</span> - copy fail cve who? I built this LTS kernel from scratch boiii</li>
+            <li><span>OpenRC Init System</span> - i'm just built different</li>
             <li><span>Hyprland on pure Wayland</span> - old kernel, rolling-wm. It's like yin-yang :)</li>
             <li><span>PipeWire</span> - it makes me feel like I know what I am doing</li>
             <li><span>Catppuccin Frape Theme</span> - i am not a good ricer, soooo</li>
@@ -75,6 +74,7 @@ li {
           <ul>
             <li><span>Neovim w/ LazyVim</span> - equally the hardest, and best decision i've made in my linux career</li>
             <li><span>Zsh w/ Oh-My-Zsh</span> - i don't like typing cd lol</li>
+            <li><span>Kitty</span> - it's gud</li>
           </ul>
         </div>
         <div>
@@ -82,7 +82,15 @@ li {
           <ul>
             <li><span>Java / Spring Framework</span> - learned it in college, kinda goated</li>
             <li><span>Rust</span> - learning currently</li>
-            <li><span>C</span> - pulling out what hair i currently have learning this :D</li>
+            <li><span>C</span> - pulling out what little hair i currently have learning this :D</li>
+            <li><span>Javascript</span> - this and many of the frameworks, still need to get familiar with angular</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Music Production</h2>
+          <ul>
+            <li><span>FL Studio DAW</span> - cracked since FL 8 in 2011, finally bought legit in 2024 LOL</li>
+            <li><span>Arturia Keylab 61 mk iii</span> - fancy; still don't know music theory though...</li>
           </ul>
         </div>
       </section>
