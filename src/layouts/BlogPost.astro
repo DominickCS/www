@@ -14,17 +14,35 @@ const { title, tag, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.
 
 <style>
 .prose {
-	max-width: 80vw;
+	max-width: 60vw;
 	margin: auto;
-	padding: 2em 0;
+	padding: 18px 36px;
   font-family: var(--font-inconsolata);
 }
+
+.title-tag-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#title {
+  padding-right: 18px;
+}
+
+.date {
+  margin-bottom: 18px;
+}
+
+}
+
 </style>
 
 <html lang="en">
 	<head>
     <title>{title}</title>
     <Font cssVariable="--font-inconsolata" />
+    <meta charset="UTF-8" />
 	</head>
 	<body>
     <NavigationBar />
@@ -35,6 +53,12 @@ const { title, tag, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.
 				</div>
 				<div class="prose">
 					<div class="title">
+            <div class="title-tag-container">
+              <h1 id="title">{title}</h1>
+              <p>
+                <a href=`/blog/tag/${tag.toLowerCase()}`>#{tag.toLowerCase()}</a>
+              </p>
+            </div>
 						<div class="date">
 							<DateFormatter date={publishDate} />
 							{
@@ -45,9 +69,7 @@ const { title, tag, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.
 								)
 							}
 						</div>
-            <h1>{title}</h1>
-            <p><a href=`/blog/tag/${tag.toLowerCase()}`>{tag.toLowerCase()}</a></p>
-						<hr />
+            <hr />
 					</div>
 					<slot />
 				</div>
