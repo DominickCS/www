@@ -56,19 +56,19 @@ main {
 
 @media screen and (min-width: 320px) and (max-width: 768px){
   section {
-      grid-template-columns: auto;
+      grid-template-columns: 1fr;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
   section {
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1024px){
   section {
-      grid-template-columns: auto auto auto;
+      grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -104,24 +104,24 @@ img {
               <div class="post-container">
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
-                  <Image src={post.data.heroImage} alt={post.data.heroImageAlt} loading={'eager'} />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-            								</a>
-            <div class="date-and-tag-container">
+                    <Image src={post.data.heroImage} width={200} height={200} quality={'max'} alt={post.data.heroImageAlt} loading={'eager'} />)}
+									  <h4 class="title">{post.data.title}</h4>
+            		</a>
+                <div class="date-and-tag-container">
 									<p class="date">
-
                     <DateFormatter date={post.data.publishDate} />
 									</p>
-              <p class="tag">
-                <a href=`/blog/tag/${post.data.tag.toLowerCase()}`>{post.data.tag.toLowerCase()}</a>
-              </p>
-              </div>
+                  <p class="tag">
+                    <a href=`/blog/tag/${post.data.tag.toLowerCase()}`>#{post.data.tag.toLowerCase()}</a>
+                  </p>
+                </div>
 							</div>
 						))
 					}
 			</section>
 		</main>
-    <Footer />
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
