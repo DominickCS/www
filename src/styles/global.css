@@ -1,7 +1,21 @@
+p code {
+  color: #e5c890;
+  background-color: #232634;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+li code {
+  color: #e5c890;
+  background-color: #232634;
+  padding: 3px;
+  border-radius: 3px;
+}
 .astro-code {
   padding: 12px;
   border-radius: 9px;
   line-height: 1.5rem;
+  border: dotted #ca9ee620 4px;
 }
 
 html {
@@ -33,13 +47,27 @@ li {
 
 .hero-image img {
 	display: block;
-  width: 80vw;
+  width: 60vw;
   max-height: 260px;
   border-radius: 9px;
   object-fit: cover;
   margin: 0 auto;
 }
 
+.prose img {
+	display: block;
+  width: 30vw;
+  max-height: fit-content;
+  border-radius: 9px;
+  object-fit: contain;
+  margin: 36px auto;
+}
+
+.prose hr {
+  opacity: 0.2;
+}
+
 .last-updated-on {
 	font-style: italic;
+  font-weight: lighter;
 }
