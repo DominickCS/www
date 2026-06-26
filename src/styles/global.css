@@ -46,11 +46,14 @@ p > a {
 }
 
 .prose img {
-	display: block;
-  width: 100%;
-  max-height: fit-content;
+  display: block;
+  max-width: 100%;
+  max-height: 65vh;
+  width: auto;
+  height: auto;
   border-radius: 9px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 li {
