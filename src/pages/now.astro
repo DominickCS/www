@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import NavigationBar from '../components/NavigationBar.astro';
+import Footer from '../components/Footer.astro';
+import { Font } from 'astro:assets';
+---
+<style>
+section {
+  min-height: 100svh;
+  max-width: 80vw;
+  margin: 0 auto;
+  font-family: var(--font-inconsolata);
+}
+
+p {
+  font-weight: normal;
+}
+
+</style>
+
+<html lang="en">
+	<head>
+    <Font cssVariable='--font-inconsolata' />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/ico" href="/favicon.ico" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="title" content='uses - developing with DominickCS_' />
+	</head>
+	<body>
+    <NavigationBar />
+    <main>
+      <section>
+        <h1>what am i doing right now?</h1>
+        <h5>last updated 06/26/2026</h5>
+        <div>
+          <h2>what am i playing?</h2>
+          <p>i am currently playing minecraft, but modded. I have a habit of starting modpacks that I never actually intend on finishing. This go around I feel that things are going to be different, better haha. Sevtech ages is not too difficult thus far, I have reached 'age 1' which roughly corresponds to the stone age. Not gonna lie, the blood magic mod and the abyssalcraft mod are both insanely deep and I might not be bright enough to comprehend it all.</p>
+        </div>
+        <div>
+          <h2>what am i listening to?</h2>
+          <p>i will always bump kaytranada. his touch on house just hits a level that i just can't explain. right now his '99.9%' album has me in a chokehold. I can't say that his newest album is my favorite however...</p>
+        </div>
+        <div>
+          <h2>what am i learning?</h2>
+          <p>i am slowly but surely reading through the tried and true K&R's 'The C Programming Language'. systems programming has always interested me, and I must say that coming from a object-oriented programming language like Java was a complete and utter culture shock. having to build the methods that have made coding enjoyable in java like .split() or similar has been eye opening</p>
+        </div>
+        <div>
+          <h2>what am i building?</h2>
+          <p>right now, I am working on a client project. it is a full-stack ecommerce art platform built with spring-boot and vite. it has been such a blessing to my career! i got this gig through my beautiful fiancee who threw my name out there as a freelance developer fresh out of college. i have been learning a TON since getting the gig back in december, launch soon</p>
+        </div>
+        <div>
+          <h2>what's life like?</h2>
+          <p>my fiancee and I have been balancing our first home purchase and wedding planning all while we both navigate this complicated economy. super proud of her, she got the promotion she's been working towards for a while. me on the other hand, yeah.. we not getting employed lol #aitookmyjob</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+	</body>
+</html>

@@ -1,0 +1,127 @@
+---
+import '../../styles/global.css';
+import { Font } from 'astro:assets';
+import { Image } from 'astro:assets';
+import NavigationBar from '../../components/NavigationBar.astro';
+import DateFormatter from '../../components/DateFormatter.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection('blog')).sort((a , b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+<style>
+main {
+  padding-top: 12px;
+  font-family: var(--font-inconsolata);
+}
+
+.post-container:hover {
+  scale: .97;
+  background-color: #949cbb20;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.post-container {
+  transition: all;
+  transition-duration: 300ms;
+  max-height: auto;
+  padding: 9px;
+  border: dotted #737994 3px;
+  border-radius: 9px;
+}
+
+.date-and-tag-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6rem;
+}
+
+.date, .tag {
+  font-size: 12px;
+  font-style: italic;
+}
+
+main {
+    min-height: 100vh;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+  section {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  section {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  section {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+section {
+  max-width: 80vw;
+  display: grid;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+img {
+	width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog - developing with DominickCS_</title>
+    <Font cssVariable="--font-inconsolata" />
+  </head>
+  <body>
+    <NavigationBar />
+    <main>
+			<section>
+					{
+						posts.map((post) => (
+              <div class="post-container">
+								<a href={`/blog/${post.id}/`}>
+									{post.data.heroImage && (
+                    <Image src={post.data.heroImage} width={200} height={200} quality={'max'} alt={post.data.heroImageAlt} loading={'eager'} />)}
+									  <h4 class="title">{post.data.title}</h4>
+            		</a>
+                <div class="date-and-tag-container">
+									<p class="date">
+                    <DateFormatter date={post.data.publishDate} />
+									</p>
+                  <p class="tag">
+                    <a href=`/blog/tag/${post.data.tag.toLowerCase()}`>#{post.data.tag.toLowerCase()}</a>
+                  </p>
+                </div>
+							</div>
+						))
+					}
+			</section>
+		</main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
+</html>

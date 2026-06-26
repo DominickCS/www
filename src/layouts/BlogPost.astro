@@ -1,0 +1,80 @@
+---
+import { Font } from 'astro:assets';
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import NavigationBar from '../components/NavigationBar.astro';
+import DateFormatter from '../components/DateFormatter.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, tag, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.props;
+---
+
+<style>
+.prose {
+	max-width: 60vw;
+	margin: auto;
+	padding: 18px 36px;
+  font-family: var(--font-inconsolata);
+}
+
+.title-tag-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#title {
+  padding-right: 18px;
+}
+
+.date {
+  margin-bottom: 18px;
+}
+
+}
+
+</style>
+
+<html lang="en">
+	<head>
+    <title>{title}</title>
+    <Font cssVariable="--font-inconsolata" />
+    <meta charset="UTF-8" />
+	</head>
+	<body>
+    <NavigationBar />
+		<main>
+			<article>
+				<div class="hero-image">
+          {heroImage && <Image src={heroImage} alt={heroImageAlt} loading={'eager'}/>}
+				</div>
+				<div class="prose">
+					<div class="title">
+            <div class="title-tag-container">
+              <h1 id="title">{title}</h1>
+              <p>
+                <a href=`/blog/tag/${tag.toLowerCase()}`>#{tag.toLowerCase()}</a>
+              </p>
+            </div>
+						<div class="date">
+							<DateFormatter date={publishDate} />
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on <DateFormatter date={updatedDate} />
+									</div>
+								)
+							}
+						</div>
+            <hr />
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+    <Footer />
+	</body>
+</html>
