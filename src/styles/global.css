@@ -50,8 +50,7 @@ p > a {
   width: 100%;
   max-height: fit-content;
   border-radius: 9px;
-  object-fit: contain;
-  margin: 36px auto;
+  margin: 0 auto;
 }
 
 li {
