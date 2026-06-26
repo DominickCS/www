@@ -2,14 +2,14 @@
 import { Font } from 'astro:assets';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
 import NavigationBar from '../components/NavigationBar.astro';
 import DateFormatter from '../components/DateFormatter.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.props;
+const { title, tag, publishDate, updatedDate, heroImage, heroImageAlt } = Astro.props;
 ---
 
 <style>
@@ -23,7 +23,7 @@ const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } 
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+    <title>{title}</title>
     <Font cssVariable="--font-inconsolata" />
 	</head>
 	<body>
@@ -45,13 +45,14 @@ const { title, description, publishDate, updatedDate, heroImage, heroImageAlt } 
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+            <h1>{title}</h1>
+            <p><a href=`/blog/tag/${tag.toLowerCase()}`>{tag.toLowerCase()}</a></p>
 						<hr />
 					</div>
 					<slot />
 				</div>
 			</article>
 		</main>
+    <Footer />
 	</body>
-<Footer />
 </html>
