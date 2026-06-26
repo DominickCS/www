@@ -1,5 +1,6 @@
 ---
 title: "Java is a great programming language, here's why..."
+tag: "programming"
 publishDate: "Jun 23 2026"
 updatedDate: "Jun 24 2026"
 heroImage: "../../images/code.png"
