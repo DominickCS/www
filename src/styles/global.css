@@ -24,6 +24,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+.prose hr {
+  opacity: 0.2;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, .date, li
 {
   color: #c6d0f5;
@@ -41,30 +45,17 @@ p > a {
   text-decoration: underline;
 }
 
-li {
-  list-style-type: square;
-}
-
-.hero-image img {
-	display: block;
-  width: 60vw;
-  max-height: 260px;
-  border-radius: 9px;
-  object-fit: cover;
-  margin: 0 auto;
-}
-
 .prose img {
 	display: block;
-  width: 30vw;
+  width: 100%;
   max-height: fit-content;
   border-radius: 9px;
   object-fit: contain;
   margin: 36px auto;
 }
 
-.prose hr {
-  opacity: 0.2;
+li {
+  list-style-type: square;
 }
 
 .last-updated-on {
