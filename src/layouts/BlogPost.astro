@@ -78,6 +78,7 @@ main {
     <title>blog - {title.toLowerCase()} - developing with DominickCS_</title>
     <Font cssVariable="--font-inconsolata" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Currently reading: ${title.toLowerCase()}`} />
     <meta charset="UTF-8" />
 	</head>
 	<body>
@@ -86,7 +87,7 @@ main {
 
 			<article>
 				<div class="hero-image">
-          {heroImage && <Image src={heroImage} alt={heroImageAlt} loading={'eager'}/>}
+          {heroImage && <Image src={heroImage} quality={'mid'} alt={heroImageAlt} loading={'eager'}/>}
 				</div>
 				<div class="prose">
 					<div class="title">
