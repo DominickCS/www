@@ -43,6 +43,7 @@ main {
   text-align: center;
   font-size: 18px;
   line-height: 1.6rem;
+  font-weight: bolder;
 }
 
 .date, .tag {
@@ -92,6 +93,7 @@ img {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The index page for my blog posts!" />
     <title>blog - developing with DominickCS_</title>
     <Font cssVariable="--font-inconsolata" />
   </head>
@@ -105,7 +107,7 @@ img {
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
                     <Image src={post.data.heroImage} quality={'low'} alt={post.data.heroImageAlt} loading={'eager'} />)}
-									  <h4 class="title">{post.data.title}</h4>
+									  <p class="title">{post.data.title}</p>
             		</a>
                 <div class="date-and-tag-container">
 									<p class="date">
