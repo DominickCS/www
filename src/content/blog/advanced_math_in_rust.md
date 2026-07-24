@@ -1,7 +1,7 @@
 ---
 title: "Advanced Math in Rust"
 tag: "programming"
-publishDate: "Jun 13, 2026"
+publishDate: "July 13, 2026"
 heroImage: "../../images/adv_math.jpg"
 heroImageAlt: "A robot solving complex mathematical problems on a whiteboard"
 ---
